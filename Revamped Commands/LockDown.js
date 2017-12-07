@@ -5,9 +5,9 @@ if(!UserInput || UserInput == null || UserInput == "") return;
 
 
 async function LockDownChannel(AmountOfTime) {
-	msg.channel.overwritePermissions(msg.guild.id, {SEND_MESSAGES: false});
+	await msg.channel.overwritePermissions(msg.guild.id, {SEND_MESSAGES: false});
 	setTimeout(function() {
-		msg.channel.overwritePermissions(msg.guild.id, {SEND_MESSAGES: true});
+		await msg.channel.overwritePermissions(msg.guild.id, {SEND_MESSAGES: true});
 	}, ms(AmountOfTime));
 };
 
