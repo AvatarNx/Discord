@@ -4,7 +4,7 @@ let ClientRole = msg.guild.fetchMember(client.user).then(m => m.highestRole.posi
 let MentionedRole = MentionedMember.highestRole.position;
 let MyHighestRole = msg.member.highestRole.position;
 let params = msg.content.split(" ").slice(1);
-let UserInput = params.join(" ");
+let UserInput = params.slice(1).join(" ");
 if(!UserInput) return msg.reply("You need to provide a kick reason!");
 if(MyHighestRole <= ClientRole) return;
 if(MyHighestRole <= MentionedRole) return;
