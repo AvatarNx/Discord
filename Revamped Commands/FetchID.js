@@ -6,7 +6,7 @@ async function fetchMemberID(UserResolvable) {
 	msg.guild.fetchMember(UserResolvable).then((output) => {
 		let ParsedMember = output.user;
 		if(output == null) return msg.reply("I couldn't find anyone by that ID in the discord.");
-		msg.reply(`Username: ${ParsedMember.tag}`);
+		await msg.reply(`Username: ${ParsedMember.tag}`);
 	});
 };
 
